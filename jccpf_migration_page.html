@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>400 Years in Motion — Jewish Caribbean Cultural Preservation Foundation</title>
+  <title>400 Years in Motion — Jewish Caribbean Culture Preservation Foundation</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
+      --navy: #1a2744;
+      --navy-mid: #243158;
       --gold: #b5903a;
       --gold-light: #d4b06a;
-      --ink: #1c1a16;
-      --ink-mid: #4a4640;
-      --ink-light: #7a7570;
+      --ink: #1a2744;
+      --ink-mid: #3a4460;
+      --ink-light: #6a7490;
       --cream: #faf8f3;
       --cream-mid: #f0ece0;
       --border: rgba(181,144,58,0.22);
@@ -33,9 +35,8 @@
       line-height: 1.7;
     }
 
-    /* ── Header ── */
     header {
-      background: var(--ink);
+      background: var(--navy);
       padding: 18px 40px;
       display: flex;
       align-items: center;
@@ -56,7 +57,6 @@
       margin: 0 8px;
     }
 
-    /* ── Hero ── */
     .hero {
       max-width: 760px;
       margin: 0 auto;
@@ -100,11 +100,10 @@
       line-height: 1.75;
     }
 
-    /* ── Map section ── */
     .map-section {
       max-width: 980px;
       margin: 0 auto;
-      padding: 16px 24px 64px;
+      padding: 16px 24px 48px;
     }
 
     .tab-row {
@@ -129,9 +128,9 @@
     }
     .tab:hover { border-color: var(--gold); color: var(--gold); }
     .tab.active {
-      background: var(--ink);
+      background: var(--navy);
       color: var(--gold-light);
-      border-color: var(--ink);
+      border-color: var(--navy);
     }
 
     #map-container {
@@ -142,7 +141,6 @@
     }
     #map-container svg { display: block; width: 100%; }
 
-    /* ── Info panel ── */
     #panel {
       margin-top: 14px;
       padding: 20px 24px;
@@ -166,7 +164,6 @@
       line-height: 1.65;
     }
 
-    /* ── Legend ── */
     .legend {
       display: flex;
       flex-wrap: wrap;
@@ -191,7 +188,27 @@
       flex-shrink: 0;
     }
 
-    /* ── Footer note ── */
+    .attribution {
+      max-width: 680px;
+      margin: 40px auto 16px;
+      padding: 18px 28px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: white;
+      text-align: center;
+    }
+    .attribution p {
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--ink-mid);
+      line-height: 1.7;
+    }
+    .attribution strong {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
     .footer-note {
       max-width: 680px;
       margin: 0 auto 64px;
@@ -213,7 +230,7 @@
     .footer-note a:hover { border-color: var(--gold); }
 
     footer {
-      background: var(--ink);
+      background: var(--navy);
       padding: 28px 40px;
       text-align: center;
       border-top: 1px solid rgba(181,144,58,0.25);
@@ -236,7 +253,7 @@
 <body>
 
 <header>
-  <div class="site-wordmark">JCCPF <span>|</span> Jewish Caribbean Cultural Preservation Foundation</div>
+  <div class="site-wordmark">JCCPF <span>|</span> Jewish Caribbean Culture Preservation Foundation</div>
 </header>
 
 <section class="hero">
@@ -267,12 +284,16 @@
   </div>
 </section>
 
+<div class="attribution">
+  <p>Genealogical research by <strong>Sandra De Marchena</strong>, whose meticulous documentation of the Sephardic families of Curaçao made this interactive map possible. Her work preserves centuries of community history for future generations.</p>
+</div>
+
 <section class="footer-note">
-  <p>Location data drawn from genealogical records of the Alvarez Correa family, members of <a href="https://mie.an" target="_blank">Mikvé Israel-Emanuel congregation</a>, Curaçao — the oldest active Jewish congregation in the Western Hemisphere. Presented by the <a href="https://jccpf.org" target="_blank">Jewish Caribbean Cultural Preservation Foundation</a>.</p>
+  <p>Location data drawn from genealogical records of the Alvares / Alvarez Correa family, members of <a href="https://mie.an" target="_blank">Mikvé Israel-Emanuel congregation</a>, Curaçao — the oldest active Jewish congregation in the Western Hemisphere. Presented by the <a href="https://jccpf.org" target="_blank">Jewish Caribbean Culture Preservation Foundation</a>.</p>
 </section>
 
 <footer>
-  <p>&copy; 2025 Jewish Caribbean Cultural Preservation Foundation &nbsp;·&nbsp; jccpf.org</p>
+  <p>&copy; 2025 Jewish Caribbean Culture Preservation Foundation &nbsp;·&nbsp; jccpf.org</p>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
@@ -285,7 +306,7 @@ const locations = {
      body:"Daniel de la Penha (b. 1649 Córdoba) and Rachel Nunes da Fonseca (b. 1656 Seville) trace directly to Spain before 1492. The Garcia Mordecai Pimentel family also has Iberian roots. The 1492 Alhambra Decree expelled an estimated 100,000–200,000 Jews; many of this family's ancestors were swept up in that wave."},
     {id:"lisbon",label:"Lisbon / Portugal",lat:38.72,lon:-9.14,color:"#534AB7",
      title:"Portugal & Lisbon — forced conversion and flight",
-     body:"The Alvares Correa founding line, the de Marchena family (Abraham aka João Peres Caldeyrao, b. c.1608), Diego Fernandes Penso (d. 1703 Portugal), and the Maduro family (Antonio Roiz o Maduro, 1570–1616, Trancoso) all originate here. The 1497 forced mass baptism and 1536 Inquisition tribunal drove families into a Converso existence — outwardly Catholic, secretly Jewish — before eventual flight."},
+     body:"The Alvares / Alvarez Correa founding line, the de Marchena family (Abraham aka João Peres Caldeyrao, b. c.1608), Diego Fernandes Penso (d. 1703 Portugal), and the Maduro family (Antonio Roiz o Maduro, 1570–1616, Trancoso) all originate here. The 1497 forced mass baptism and 1536 Inquisition tribunal drove families into a Converso existence — outwardly Catholic, secretly Jewish — before eventual flight."},
     {id:"trancoso",label:"Trancoso",lat:40.78,lon:-7.02,color:"#534AB7",
      title:"Trancoso, Portugal — Maduro origins",
      body:"Antonio Roiz o Maduro (b. 1570, d. 1616 Coimbra) and his family are documented here. Trancoso was a Jewish stronghold in northeast Portugal, heavily affected by the 1497 forced conversion. Gabriel de Manuel Levy (b. c.1575 Trancoso) also originates here before moving to Amsterdam."},
@@ -312,7 +333,7 @@ const locations = {
      body:"David de Yeudah Cohen Henriquez (b. 1702 London, d. 1778 Curaçao) and his father Jeudah de David Cohen Henriquez Jr. (b. c.1677 London) were born here before the family moved to Curaçao. Solomon Haim de David de Castro (d. Apr 1740 London) is buried at Mile End Cemetery. Jewish resettlement under Cromwell (1656) opened London as a node in the network."},
     {id:"livorno",label:"Livorno",lat:43.55,lon:10.31,color:"#534AB7",
      title:"Livorno (Leghorn), Italy — Rabbi Imanuel's birthplace",
-     body:"Rabbi Imanuel Alvares Correa — the founding patriarch — was born here in 1650. Livorno was exceptional: Grand Duke Ferdinand I's 'Livornina' charter (1593) explicitly invited Jewish settlement with full religious freedom, making it a rare open haven in Catholic Europe. The Rabbi married in Amsterdam (1691), sailed to Curaçao, and died there in 1717. He is the earliest fully documented ancestor in the direct Alvarez Correa line."},
+     body:"Rabbi Imanuel Alvares Correa — the founding patriarch — was born here in 1650. Livorno was exceptional: Grand Duke Ferdinand I's 'Livornina' charter (1593) explicitly invited Jewish settlement with full religious freedom, making it a rare open haven in Catholic Europe. The Rabbi married in Amsterdam (1691), sailed to Curaçao, and died there in 1717. He is the earliest fully documented ancestor in the direct Alvares / Alvarez Correa line."},
     {id:"dublin",label:"Dublin",lat:53.34,lon:-6.27,color:"#0F6E56",
      title:"Dublin, Ireland",
      body:"Moses Haim de Solomon de Castro was born in Dublin, Ireland (c.1721) — a striking testament to how widely Sephardic merchant families dispersed across Atlantic port cities. He came to Curaçao, where he died in 1761. His genealogical entry carries a question mark — 'Dublin, Ireland (?)' — acknowledging how unexpected this location was even to the researchers."},
@@ -326,7 +347,7 @@ const locations = {
   caribbean: [
     {id:"curacao",label:"Curaçao",lat:12.17,lon:-68.99,color:"#D85A30",
      title:"Curaçao — the Snoa, Beth Haim, Berg Altena",
-     body:"The heart of this family's world for nearly 400 years. The Jewish community was formally established c.1651 when the Dutch West India Company invited Sephardic merchants. Mikvé Israel-Emanuel synagogue (the Snoa) was built in 1732. Beth Haim cemetery (1659) — the oldest Jewish cemetery in the Western Hemisphere — and Berg Altena hold hundreds of family ancestors. Families documented here include Alvares Correa, da Costa Gomez, Pinedo, Cohen Henriquez, Naar, Jesurun, Senior, de Marchena, de Casseres, and many more."},
+     body:"The heart of this family's world for nearly 400 years. The Jewish community was formally established c.1651 when the Dutch West India Company invited Sephardic merchants. Mikvé Israel-Emanuel synagogue (the Snoa) was built in 1732. Beth Haim cemetery (1659) — the oldest Jewish cemetery in the Western Hemisphere — and Berg Altena hold hundreds of family ancestors. Families documented here include Alvares / Alvarez Correa, da Costa Gomez, Pinedo, Cohen Henriquez, Naar, Jesurun, Senior, de Marchena, de Casseres, and many more."},
     {id:"aruba",label:"Aruba",lat:12.52,lon:-69.97,color:"#D85A30",
      title:"Aruba",
      body:"Joseph (José) de Jacob Henriquez was born here (23 Jan 1795, Aruba DWI) and his daughter Abigail de José Jacob Henriquez was also born in Aruba (24 Apr 1831). The Henriquez family maintained a commercial presence across the Dutch ABC islands (Aruba, Bonaire, Curaçao)."},
@@ -362,23 +383,21 @@ const arcs = {
 };
 
 const views = {
-  europe:    { center:[12,48],   scale:660,  tx:-100, ty:60  },
-  caribbean: { center:[-67,14],  scale:1600, tx:-80,  ty:20  }
+  europe:    { center:[12,48],  scale:660,  tx:-100, ty:60 },
+  caribbean: { center:[-67,14], scale:1600, tx:-80,  ty:20 }
 };
 
 const W=900, H=520;
 let worldData=null, currentView="europe";
 
 function getProj(v) {
-  const cfg = views[v];
-  return d3.geoMercator()
-    .center(cfg.center).scale(cfg.scale)
-    .translate([W/2+cfg.tx, H/2+cfg.ty]);
+  const c=views[v];
+  return d3.geoMercator().center(c.center).scale(c.scale).translate([W/2+c.tx, H/2+c.ty]);
 }
 
 function buildMap() {
   d3.select("#map-container").selectAll("svg").remove();
-  const svg = d3.select("#map-container").append("svg")
+  const svg=d3.select("#map-container").append("svg")
     .attr("viewBox",`0 0 ${W} ${H}`).attr("width","100%");
   svg.append("rect").attr("width",W).attr("height",H).attr("fill","#ccdff0");
   drawView(svg, currentView);
@@ -387,8 +406,8 @@ function buildMap() {
 
 function drawView(svg, v) {
   svg.selectAll(".geo,.arcs,.locs").remove();
-  const proj = getProj(v);
-  const pathGen = d3.geoPath(proj);
+  const proj=getProj(v);
+  const pathGen=d3.geoPath(proj);
 
   svg.append("g").attr("class","geo")
     .selectAll("path")
@@ -396,10 +415,10 @@ function drawView(svg, v) {
     .join("path").attr("d",pathGen)
     .attr("fill","#e8e6df").attr("stroke","rgba(0,0,0,.13)").attr("stroke-width","0.5");
 
-  const arcG = svg.append("g").attr("class","arcs");
+  const arcG=svg.append("g").attr("class","arcs");
   const locMap={};
   (locations[v]||[]).forEach(l=>{ locMap[l.id]=l; });
-  const lineGen = d3.line().curve(d3.curveBasis);
+  const lineGen=d3.line().curve(d3.curveBasis);
 
   (arcs[v]||[]).forEach(([a,b])=>{
     const la=locMap[a], lb=locMap[b];
@@ -418,7 +437,7 @@ function drawView(svg, v) {
       .attr("stroke-dasharray", len>180 ? "5,4" : "none");
   });
 
-  const locG = svg.append("g").attr("class","locs");
+  const locG=svg.append("g").attr("class","locs");
   (locations[v]||[]).forEach(l=>{
     const p=proj([l.lon,l.lat]);
     if(!p) return;
@@ -431,9 +450,9 @@ function drawView(svg, v) {
       });
     g.append("circle").attr("r",6).attr("fill",l.color)
       .attr("stroke","white").attr("stroke-width","1.5").attr("opacity",".93");
-    const anchor = l.lon>14?"start":(l.lon<-55?"end":"middle");
-    const xOff = anchor==="start"?10:(anchor==="end"?-10:0);
-    const yOff = anchor==="middle"?-10:3;
+    const anchor=l.lon>14?"start":(l.lon<-55?"end":"middle");
+    const xOff=anchor==="start"?10:(anchor==="end"?-10:0);
+    const yOff=anchor==="middle"?-10:3;
     g.append("text").attr("x",xOff).attr("y",yOff)
       .attr("text-anchor",anchor)
       .attr("font-size","11px").attr("font-weight","500")
@@ -452,7 +471,7 @@ function showView(v, btn) {
   document.getElementById("panel-title").textContent="Click any location to explore";
   document.getElementById("panel-body").textContent=
     v==="europe"
-      ? "The European view traces Iberian origins through the French corridor to the Dutch Golden Age refuge cities — the primary route your family took from the 1490s through the 1750s."
+      ? "The European view traces Iberian origins through the French corridor to the Dutch Golden Age refuge cities — the primary route this family took from the 1490s through the 1750s."
       : "The Caribbean view shows Curaçao as the great convergence point, with its network stretching to Aruba, Suriname, Venezuela, and eventually New York and Boston.";
   if(svgRef) drawView(svgRef, v);
 }
