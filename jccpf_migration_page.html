@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>400 Years in Motion — Jewish Caribbean Cultural Preservation Foundation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #b5903a;
+      --gold-light: #d4b06a;
+      --ink: #1c1a16;
+      --ink-mid: #4a4640;
+      --ink-light: #7a7570;
+      --cream: #faf8f3;
+      --cream-mid: #f0ece0;
+      --border: rgba(181,144,58,0.22);
+      --purple: #534AB7;
+      --teal: #0F6E56;
+      --coral: #D85A30;
+      --blue: #185FA5;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--ink);
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(181,144,58,0.4);
+    }
+    .site-wordmark {
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+    }
+    .site-wordmark span {
+      color: rgba(255,255,255,0.45);
+      font-weight: 300;
+      margin: 0 8px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 64px 32px 40px;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(34px, 5vw, 52px);
+      font-weight: 500;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 22px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .hero-rule {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 22px;
+    }
+    .hero p {
+      font-family: 'Jost', sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--ink-mid);
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+
+    /* ── Map section ── */
+    .map-section {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 16px 24px 64px;
+    }
+
+    .tab-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      justify-content: center;
+    }
+    .tab {
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 7px 20px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      background: transparent;
+      color: var(--ink-light);
+      transition: all 0.18s;
+    }
+    .tab:hover { border-color: var(--gold); color: var(--gold); }
+    .tab.active {
+      background: var(--ink);
+      color: var(--gold-light);
+      border-color: var(--ink);
+    }
+
+    #map-container {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      background: #ccdff0;
+    }
+    #map-container svg { display: block; width: 100%; }
+
+    /* ── Info panel ── */
+    #panel {
+      margin-top: 14px;
+      padding: 20px 24px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      min-height: 90px;
+    }
+    #panel-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    #panel-body {
+      font-family: 'Jost', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--ink-mid);
+      line-height: 1.65;
+    }
+
+    /* ── Legend ── */
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 28px;
+      margin-top: 18px;
+      justify-content: center;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--ink-light);
+    }
+    .legend-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── Footer note ── */
+    .footer-note {
+      max-width: 680px;
+      margin: 0 auto 64px;
+      padding: 0 32px;
+      text-align: center;
+    }
+    .footer-note p {
+      font-family: 'Jost', sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--ink-light);
+      line-height: 1.7;
+    }
+    .footer-note a {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+    }
+    .footer-note a:hover { border-color: var(--gold); }
+
+    footer {
+      background: var(--ink);
+      padding: 28px 40px;
+      text-align: center;
+      border-top: 1px solid rgba(181,144,58,0.25);
+    }
+    footer p {
+      font-family: 'Jost', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 14px 20px; }
+      .hero { padding: 40px 20px 28px; }
+      .map-section { padding: 12px 16px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="site-wordmark">JCCPF <span>|</span> Jewish Caribbean Cultural Preservation Foundation</div>
+</header>
+
+<section class="hero">
+  <p class="hero-eyebrow">Sephardic diaspora · 1490s – present</p>
+  <h1>400 Years <em>in Motion</em></h1>
+  <div class="hero-rule"></div>
+  <p>From the Iberian expulsions through the Dutch Golden Age, across the Atlantic to Curaçao, and into the modern Americas — the migration geography of one Sephardic family across fifteen generations.</p>
+</section>
+
+<section class="map-section">
+  <div class="tab-row">
+    <button class="tab active" onclick="showView('europe', this)">Europe &amp; Atlantic</button>
+    <button class="tab" onclick="showView('caribbean', this)">Caribbean &amp; Americas</button>
+  </div>
+
+  <div id="map-container"></div>
+
+  <div id="panel">
+    <div id="panel-title">Click any location to explore</div>
+    <p id="panel-body">Toggle between the two views. Europe traces the Iberian origins and Dutch refuge cities; Caribbean shows Curaçao as the convergence point and the wider New World network. Each dot represents a documented ancestral presence.</p>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#534AB7"></div>Iberian origins (1490s–1650s)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#0F6E56"></div>Northern European refuge (1550s–1750s)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#D85A30"></div>Caribbean settlement (1650s–1900s)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#185FA5"></div>New World diaspora (1700s–present)</div>
+  </div>
+</section>
+
+<section class="footer-note">
+  <p>Location data drawn from genealogical records of the Alvarez Correa family, members of <a href="https://mie.an" target="_blank">Mikvé Israel-Emanuel congregation</a>, Curaçao — the oldest active Jewish congregation in the Western Hemisphere. Presented by the <a href="https://jccpf.org" target="_blank">Jewish Caribbean Cultural Preservation Foundation</a>.</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Jewish Caribbean Cultural Preservation Foundation &nbsp;·&nbsp; jccpf.org</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script>
+const locations = {
+  europe: [
+    {id:"seville",label:"Seville / Córdoba",lat:37.39,lon:-5.99,color:"#534AB7",
+     title:"Seville & Córdoba — Iberian expulsion",
+     body:"Daniel de la Penha (b. 1649 Córdoba) and Rachel Nunes da Fonseca (b. 1656 Seville) trace directly to Spain before 1492. The Garcia Mordecai Pimentel family also has Iberian roots. The 1492 Alhambra Decree expelled an estimated 100,000–200,000 Jews; many of this family's ancestors were swept up in that wave."},
+    {id:"lisbon",label:"Lisbon / Portugal",lat:38.72,lon:-9.14,color:"#534AB7",
+     title:"Portugal & Lisbon — forced conversion and flight",
+     body:"The Alvares Correa founding line, the de Marchena family (Abraham aka João Peres Caldeyrao, b. c.1608), Diego Fernandes Penso (d. 1703 Portugal), and the Maduro family (Antonio Roiz o Maduro, 1570–1616, Trancoso) all originate here. The 1497 forced mass baptism and 1536 Inquisition tribunal drove families into a Converso existence — outwardly Catholic, secretly Jewish — before eventual flight."},
+    {id:"trancoso",label:"Trancoso",lat:40.78,lon:-7.02,color:"#534AB7",
+     title:"Trancoso, Portugal — Maduro origins",
+     body:"Antonio Roiz o Maduro (b. 1570, d. 1616 Coimbra) and his family are documented here. Trancoso was a Jewish stronghold in northeast Portugal, heavily affected by the 1497 forced conversion. Gabriel de Manuel Levy (b. c.1575 Trancoso) also originates here before moving to Amsterdam."},
+    {id:"bayonne",label:"Bayonne",lat:43.49,lon:-1.47,color:"#0F6E56",
+     title:"Bayonne & St-Jean-de-Luz — French Sephardic haven",
+     body:"Southwestern France sheltered Converso families as 'New Christians.' Rachel Bravo (b. c.1685 Bayonne), Hester Dias Sardo (b. 1647 Bordeaux), Daniel de David Gomes Casseres (b. 1763 Bayonne), Ribca de Ishac Gomes Silva (b. c.1702 Bayonne), and Isabel Fernandes (d. c.1618 St-Jean-de-Luz) all connect here. Many families used Bayonne as a stepping stone before re-Judaizing openly in Amsterdam."},
+    {id:"bordeaux",label:"Bordeaux",lat:44.84,lon:-0.58,color:"#0F6E56",
+     title:"Bordeaux",
+     body:"Hester (Ester) Dias Sardo (b. 1647 Bordeaux, d. 1719 Curaçao) — wife of Hazan Moseh Levy Maduro — traces to Bordeaux. The city's 'Portuguese Nation' community was established by the 1600s, with families moving between Bordeaux, Bayonne, and Amsterdam."},
+    {id:"antwerp",label:"Antwerp",lat:51.22,lon:4.4,color:"#0F6E56",
+     title:"Antwerp — Converso crossroads",
+     body:"A crucial waypoint before the Spanish Fury (1576) drove Sephardim northward. Ancestors documented here include Isaacq de Abraham de Marchena (b. 1638), Rebecca de David Carilho (b. 1641), Ester Carillo (b. 1638), Jeudah (Felipe Henriques) Senior (b. 1589), and Batsebah de Leon (b. 1644). Antwerp's merchant networks made it the first great staging post after Iberia."},
+    {id:"amsterdam",label:"Amsterdam",lat:52.37,lon:4.9,color:"#0F6E56",
+     title:"Amsterdam — the golden refuge",
+     body:"The epicenter of this family's Sephardic world. Scores of ancestors lived, married, or are buried at Ouderkerk: Rabbi Imanuel Alvares Correa (married 1691, sailed to Curaçao), Mordechay de Jeudah Senior (b. 1620, d. 1680), Surgeon Salomon Levy Maduro (b. 1629, d. 1699), Gabriel de Imanuel da Costa Gomez (b. 1696), Ribbi Mordechai de Crasto (d. 1681), Daniel de la Penha (d. 1718 Amsterdam), and many more. The Esnoga opened 1675; Portuguese Jewish community established 1639."},
+    {id:"rotterdam",label:"Rotterdam",lat:51.92,lon:4.48,color:"#0F6E56",
+     title:"Rotterdam",
+     body:"Rachel de Daniel de la Penha was born here (Aug 1704); her parents Daniel and Judith de Abraham Henriques de Castro married here (1698). Saul de Josiau Pardo Brown was born in Rotterdam before going to Curaçao (d. 1702 Curaçao). Rotterdam was a secondary node in the Dutch Sephardic network."},
+    {id:"hamburg",label:"Hamburg / Altona",lat:53.55,lon:10.0,color:"#0F6E56",
+     title:"Hamburg & Altona — northern refuge",
+     body:"David de Castro (b. c.1651, d. 1702 Hamburg) and Isaac Namias de Castro (d. 1669 Hamburg) are buried at the Altona Portuguese cemetery. David 'Dr. Rodrigo' Namias de Castro, the celebrated physician (b. 1550 Lisbon, d. 1627 Hamburg), also spent his life here. Solomon Haim de David de Castro (b. c.1671 Hamburg, d. 1740 London) moved through this community."},
+    {id:"london",label:"London",lat:51.5,lon:-0.12,color:"#0F6E56",
+     title:"London — Sephardic community",
+     body:"David de Yeudah Cohen Henriquez (b. 1702 London, d. 1778 Curaçao) and his father Jeudah de David Cohen Henriquez Jr. (b. c.1677 London) were born here before the family moved to Curaçao. Solomon Haim de David de Castro (d. Apr 1740 London) is buried at Mile End Cemetery. Jewish resettlement under Cromwell (1656) opened London as a node in the network."},
+    {id:"livorno",label:"Livorno",lat:43.55,lon:10.31,color:"#534AB7",
+     title:"Livorno (Leghorn), Italy — Rabbi Imanuel's birthplace",
+     body:"Rabbi Imanuel Alvares Correa — the founding patriarch — was born here in 1650. Livorno was exceptional: Grand Duke Ferdinand I's 'Livornina' charter (1593) explicitly invited Jewish settlement with full religious freedom, making it a rare open haven in Catholic Europe. The Rabbi married in Amsterdam (1691), sailed to Curaçao, and died there in 1717. He is the earliest fully documented ancestor in the direct Alvarez Correa line."},
+    {id:"dublin",label:"Dublin",lat:53.34,lon:-6.27,color:"#0F6E56",
+     title:"Dublin, Ireland",
+     body:"Moses Haim de Solomon de Castro was born in Dublin, Ireland (c.1721) — a striking testament to how widely Sephardic merchant families dispersed across Atlantic port cities. He came to Curaçao, where he died in 1761. His genealogical entry carries a question mark — 'Dublin, Ireland (?)' — acknowledging how unexpected this location was even to the researchers."},
+    {id:"salonika",label:"Salonika",lat:40.64,lon:22.94,color:"#534AB7",
+     title:"Salonika (Thessaloniki) — Ottoman refuge",
+     body:"David de Joseph Pardo was born in Salonika (then Ottoman Empire), and Joseph Pardo (d. 1619) also traces here. After 1492, Salonika became the largest Sephardic city in the world — 'Mother of Israel.' The Pardo line connects this family to the eastern branch of the Sephardic diaspora, distinct from the Atlantic route taken by most other lines."},
+    {id:"chappaqua",label:"Chappaqua, NY",lat:41.16,lon:-73.78,color:"#185FA5",
+     title:"Chappaqua, New York — modern chapter",
+     body:"John Henry Alvarez Correa and Jeanette Aurelia (Vicki) Smith married here on 16 June 1967 — the modern American chapter of a lineage stretching back to 15th-century Iberia."},
+  ],
+  caribbean: [
+    {id:"curacao",label:"Curaçao",lat:12.17,lon:-68.99,color:"#D85A30",
+     title:"Curaçao — the Snoa, Beth Haim, Berg Altena",
+     body:"The heart of this family's world for nearly 400 years. The Jewish community was formally established c.1651 when the Dutch West India Company invited Sephardic merchants. Mikvé Israel-Emanuel synagogue (the Snoa) was built in 1732. Beth Haim cemetery (1659) — the oldest Jewish cemetery in the Western Hemisphere — and Berg Altena hold hundreds of family ancestors. Families documented here include Alvares Correa, da Costa Gomez, Pinedo, Cohen Henriquez, Naar, Jesurun, Senior, de Marchena, de Casseres, and many more."},
+    {id:"aruba",label:"Aruba",lat:12.52,lon:-69.97,color:"#D85A30",
+     title:"Aruba",
+     body:"Joseph (José) de Jacob Henriquez was born here (23 Jan 1795, Aruba DWI) and his daughter Abigail de José Jacob Henriquez was also born in Aruba (24 Apr 1831). The Henriquez family maintained a commercial presence across the Dutch ABC islands (Aruba, Bonaire, Curaçao)."},
+    {id:"suriname",label:"Suriname",lat:5.85,lon:-55.2,color:"#D85A30",
+     title:"Suriname — Pardo connection",
+     body:"David de Josiau Pardo died here (c.1716). The Pardo and Casseres families were part of Suriname's Sephardic community centered at Jodensavanne, which predates the Curaçao community. Chacham Josiau de David Pardo (a direct ancestor, married 1648 Curaçao) had family connections to both communities."},
+    {id:"laguaira",label:"La Guaira, Venezuela",lat:10.6,lon:-66.94,color:"#D85A30",
+     title:"La Guaira, Venezuela",
+     body:"Rebecca (Ribca) de Gabriel Pinedo died here (3 Aug 1896), reflecting the active commercial networks Curaçao Jewish families maintained along the Venezuelan coast. Her body was returned to Curaçao and buried at Berg Altena in 1900 — four years later. Curaçao merchants traded heavily with Caracas and La Guaira throughout the 18th and 19th centuries."},
+    {id:"newyork",label:"New York",lat:40.71,lon:-74.0,color:"#185FA5",
+     title:"New York — modern diaspora",
+     body:"John Henry Alvarez Correa (b. 1943 New York) and his daughter Susan Rachelle Alvarez Correa (b. 1971 New York) represent the modern American chapter. Samuel de Benjamin de Casseres was born in New York (noted in the genealogy). Esther m. to Pardo died in New York (1708). New York's Congregation Shearith Israel (founded 1654 by Sephardim) maintained close ties to the Curaçao community for centuries."},
+    {id:"boston",label:"Boston",lat:42.36,lon:-71.06,color:"#185FA5",
+     title:"Boston",
+     body:"Jeanette Aurelia (Vicki) Smith was born in Boston, MA (16 Feb 1945) — bringing a New England maternal line into the family."},
+  ]
+};
+
+const arcs = {
+  europe: [
+    ["seville","lisbon"],["seville","antwerp"],["lisbon","trancoso"],
+    ["lisbon","bayonne"],["lisbon","antwerp"],["lisbon","amsterdam"],
+    ["trancoso","amsterdam"],["bayonne","bordeaux"],["bayonne","amsterdam"],
+    ["bordeaux","amsterdam"],["antwerp","amsterdam"],["antwerp","hamburg"],
+    ["amsterdam","rotterdam"],["amsterdam","hamburg"],["amsterdam","london"],
+    ["amsterdam","livorno"],["livorno","amsterdam"],["hamburg","london"],
+    ["salonika","amsterdam"],["london","chappaqua"],["amsterdam","chappaqua"],
+  ],
+  caribbean: [
+    ["curacao","aruba"],["curacao","suriname"],["curacao","laguaira"],
+    ["curacao","newyork"],["newyork","boston"],
+  ]
+};
+
+const views = {
+  europe:    { center:[12,48],   scale:660,  tx:-100, ty:60  },
+  caribbean: { center:[-67,14],  scale:1600, tx:-80,  ty:20  }
+};
+
+const W=900, H=520;
+let worldData=null, currentView="europe";
+
+function getProj(v) {
+  const cfg = views[v];
+  return d3.geoMercator()
+    .center(cfg.center).scale(cfg.scale)
+    .translate([W/2+cfg.tx, H/2+cfg.ty]);
+}
+
+function buildMap() {
+  d3.select("#map-container").selectAll("svg").remove();
+  const svg = d3.select("#map-container").append("svg")
+    .attr("viewBox",`0 0 ${W} ${H}`).attr("width","100%");
+  svg.append("rect").attr("width",W).attr("height",H).attr("fill","#ccdff0");
+  drawView(svg, currentView);
+  return svg;
+}
+
+function drawView(svg, v) {
+  svg.selectAll(".geo,.arcs,.locs").remove();
+  const proj = getProj(v);
+  const pathGen = d3.geoPath(proj);
+
+  svg.append("g").attr("class","geo")
+    .selectAll("path")
+    .data(topojson.feature(worldData, worldData.objects.countries).features)
+    .join("path").attr("d",pathGen)
+    .attr("fill","#e8e6df").attr("stroke","rgba(0,0,0,.13)").attr("stroke-width","0.5");
+
+  const arcG = svg.append("g").attr("class","arcs");
+  const locMap={};
+  (locations[v]||[]).forEach(l=>{ locMap[l.id]=l; });
+  const lineGen = d3.line().curve(d3.curveBasis);
+
+  (arcs[v]||[]).forEach(([a,b])=>{
+    const la=locMap[a], lb=locMap[b];
+    if(!la||!lb) return;
+    const pa=proj([la.lon,la.lat]), pb=proj([lb.lon,lb.lat]);
+    if(!pa||!pb) return;
+    const dx=pb[0]-pa[0], dy=pb[1]-pa[1];
+    const len=Math.sqrt(dx*dx+dy*dy);
+    const mx=(pa[0]+pb[0])/2 - dy*0.22;
+    const my=(pa[1]+pb[1])/2 + dx*0.22;
+    arcG.append("path")
+      .attr("d", lineGen([pa,[mx,my],pb]))
+      .attr("fill","none")
+      .attr("stroke","rgba(0,0,0,.11)")
+      .attr("stroke-width","1.2")
+      .attr("stroke-dasharray", len>180 ? "5,4" : "none");
+  });
+
+  const locG = svg.append("g").attr("class","locs");
+  (locations[v]||[]).forEach(l=>{
+    const p=proj([l.lon,l.lat]);
+    if(!p) return;
+    const g=locG.append("g").attr("transform",`translate(${p[0]},${p[1]})`).style("cursor","pointer")
+      .on("click",()=>{
+        document.getElementById("panel-title").textContent=l.title;
+        document.getElementById("panel-body").textContent=l.body;
+        locG.selectAll("circle").attr("r",6).attr("stroke-width","1.5");
+        g.select("circle").attr("r",9).attr("stroke-width","2.5");
+      });
+    g.append("circle").attr("r",6).attr("fill",l.color)
+      .attr("stroke","white").attr("stroke-width","1.5").attr("opacity",".93");
+    const anchor = l.lon>14?"start":(l.lon<-55?"end":"middle");
+    const xOff = anchor==="start"?10:(anchor==="end"?-10:0);
+    const yOff = anchor==="middle"?-10:3;
+    g.append("text").attr("x",xOff).attr("y",yOff)
+      .attr("text-anchor",anchor)
+      .attr("font-size","11px").attr("font-weight","500")
+      .attr("fill","rgba(0,0,0,.72)")
+      .attr("font-family","'Jost',sans-serif")
+      .attr("pointer-events","none")
+      .text(l.label);
+  });
+}
+
+let svgRef=null;
+function showView(v, btn) {
+  currentView=v;
+  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+  btn.classList.add("active");
+  document.getElementById("panel-title").textContent="Click any location to explore";
+  document.getElementById("panel-body").textContent=
+    v==="europe"
+      ? "The European view traces Iberian origins through the French corridor to the Dutch Golden Age refuge cities — the primary route your family took from the 1490s through the 1750s."
+      : "The Caribbean view shows Curaçao as the great convergence point, with its network stretching to Aruba, Suriname, Venezuela, and eventually New York and Boston.";
+  if(svgRef) drawView(svgRef, v);
+}
+
+d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json").then(w=>{
+  worldData=w;
+  svgRef=buildMap();
+});
+</script>
+</body>
+</html>
