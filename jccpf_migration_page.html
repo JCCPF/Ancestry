@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="32.png">
-  <title>5 Centuries in Motion — Jewish Caribbean Culture Preservation Foundation</title>
+  <title>Five Centuries in Motion — Jewish Caribbean Culture Preservation Foundation</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -18,12 +17,7 @@
       --ink-mid: #3a4460;
       --ink-light: #6a7490;
       --cream: #faf8f3;
-      --cream-mid: #f0ece0;
       --border: rgba(181,144,58,0.22);
-      --purple: #534AB7;
-      --teal: #0F6E56;
-      --coral: #D85A30;
-      --blue: #185FA5;
     }
 
     html { scroll-behavior: smooth; }
@@ -36,12 +30,10 @@
       line-height: 1.7;
     }
 
-    
-
     .hero {
       max-width: 760px;
       margin: 0 auto;
-      padding: 64px 32px 40px;
+      padding: 32px 32px 24px;
       text-align: center;
     }
     .hero-eyebrow {
@@ -51,15 +43,15 @@
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
     .hero h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(34px, 5vw, 52px);
+      font-size: clamp(30px, 5vw, 48px);
       font-weight: 500;
       line-height: 1.15;
       color: var(--ink);
-      margin-bottom: 22px;
+      margin-bottom: 18px;
     }
     .hero h1 em {
       font-style: italic;
@@ -69,7 +61,7 @@
       width: 48px;
       height: 1px;
       background: var(--gold);
-      margin: 0 auto 22px;
+      margin: 0 auto 18px;
     }
     .hero p {
       font-family: 'Jost', sans-serif;
@@ -84,7 +76,7 @@
     .map-section {
       max-width: 980px;
       margin: 0 auto;
-      padding: 16px 24px 48px;
+      padding: 16px 24px 32px;
     }
 
     .tab-row {
@@ -171,7 +163,7 @@
 
     .attribution {
       max-width: 680px;
-      margin: 40px auto 16px;
+      margin: 28px auto 16px;
       padding: 18px 28px;
       border: 1px solid var(--border);
       border-radius: 6px;
@@ -192,7 +184,7 @@
 
     .footer-note {
       max-width: 680px;
-      margin: 0 auto 64px;
+      margin: 0 auto 32px;
       padding: 0 32px;
       text-align: center;
     }
@@ -210,18 +202,13 @@
     }
     .footer-note a:hover { border-color: var(--gold); }
 
-    
-
     @media (max-width: 600px) {
-      header { padding: 14px 20px; }
-      .hero { padding: 40px 20px 28px; }
-      .map-section { padding: 12px 16px 40px; }
+      .hero { padding: 24px 20px 18px; }
+      .map-section { padding: 12px 16px 24px; }
     }
   </style>
 </head>
 <body>
-
-
 
 <section class="hero">
   <p class="hero-eyebrow">Sephardic diaspora · 1490s – present</p>
@@ -258,8 +245,6 @@
 <section class="footer-note">
   <p>Location data drawn from genealogical records of the Alvares / Alvarez Correa family, members of <a href="https://mie.an" target="_blank">Mikvé Israel-Emanuel congregation</a>, Curaçao — the oldest active Jewish congregation in the Western Hemisphere. Presented by the <a href="https://jccpf.org" target="_blank">Jewish Caribbean Culture Preservation Foundation</a>.</p>
 </section>
-
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
@@ -298,7 +283,7 @@ const locations = {
      body:"David de Yeudah Cohen Henriquez (b. 1702 London, d. 1778 Curaçao) and his father Jeudah de David Cohen Henriquez Jr. (b. c.1677 London) were born here before the family moved to Curaçao. Solomon Haim de David de Castro (d. Apr 1740 London) is buried at Mile End Cemetery. Jewish resettlement under Cromwell (1656) opened London as a node in the network."},
     {id:"livorno",label:"Livorno",lat:43.55,lon:10.31,color:"#534AB7",
      title:"Livorno (Leghorn), Italy — Rabbi Imanuel's birthplace",
-     body:"Rabbi Imanuel Alvares Correa — the founding patriarch — was born here in 1650. Livorno was exceptional: Grand Duke Ferdinand I's 'Livornina' charter (1593) explicitly invited Jewish settlement with full religious freedom, making it a rare open haven in Catholic Europe. The Rabbi married in Amsterdam (1691), sailed to Curaçao, and died there in 1717. He is the earliest fully documented ancestor in the direct Alvares / Alvarez Correa line."},
+     body:"Rabbi Imanuel Alvares Correa — the founding patriarch — was born here in 1650. The Alvares Correa family had made their way from Portugal to Livorno, where Grand Duke Ferdinand I's 'Livornina' charter (1593) offered full religious freedom — a rare open haven in Catholic Europe. The Rabbi then married in Amsterdam (1691), sailed to Curaçao, and died there in 1717. He is the earliest fully documented ancestor in the direct Alvares / Alvarez Correa line."},
     {id:"dublin",label:"Dublin",lat:53.34,lon:-6.27,color:"#0F6E56",
      title:"Dublin, Ireland",
      body:"Moses Haim de Solomon de Castro was born in Dublin, Ireland (c.1721) — a striking testament to how widely Sephardic merchant families dispersed across Atlantic port cities. He came to Curaçao, where he died in 1761. His genealogical entry carries a question mark — 'Dublin, Ireland (?)' — acknowledging how unexpected this location was even to the researchers."},
@@ -334,13 +319,12 @@ const locations = {
 const arcs = {
   europe: [
     ["seville","lisbon"],["seville","antwerp"],["lisbon","trancoso"],
-    ["lisbon","bayonne"],["lisbon","antwerp"],["lisbon","amsterdam"],
-    ["lisbon","livorno"],["trancoso","amsterdam"],["bayonne","bordeaux"],
-    ["bayonne","amsterdam"],["bordeaux","amsterdam"],["antwerp","amsterdam"],
-    ["antwerp","hamburg"],["amsterdam","rotterdam"],["amsterdam","hamburg"],
-    ["amsterdam","london"],["amsterdam","livorno"],["livorno","amsterdam"],
-    ["hamburg","london"],["salonika","amsterdam"],["london","chappaqua"],
-    ["amsterdam","chappaqua"],
+    ["lisbon","bayonne"],["lisbon","antwerp"],["lisbon","livorno"],
+    ["lisbon","amsterdam"],["livorno","amsterdam"],["trancoso","amsterdam"],
+    ["bayonne","bordeaux"],["bayonne","amsterdam"],["bordeaux","amsterdam"],
+    ["antwerp","amsterdam"],["antwerp","hamburg"],["amsterdam","rotterdam"],
+    ["amsterdam","hamburg"],["amsterdam","london"],["hamburg","london"],
+    ["salonika","amsterdam"],["london","chappaqua"],["amsterdam","chappaqua"],
   ],
   caribbean: [
     ["curacao","aruba"],["curacao","suriname"],["curacao","laguaira"],
@@ -392,7 +376,6 @@ function drawView(svg, v) {
     const pa=proj([la.lon,la.lat]), pb=proj([lb.lon,lb.lat]);
     if(!pa||!pb) return;
     const dx=pb[0]-pa[0], dy=pb[1]-pa[1];
-    const len=Math.sqrt(dx*dx+dy*dy);
     const mx=(pa[0]+pb[0])/2 - dy*0.22;
     const my=(pa[1]+pb[1])/2 + dx*0.22;
     arcG.append("path")
@@ -400,7 +383,7 @@ function drawView(svg, v) {
       .attr("fill","none")
       .attr("stroke","rgba(0,0,0,.11)")
       .attr("stroke-width","1.2")
-      .attr("stroke-dasharray", len>180 ? "5,4" : "none");
+      .attr("stroke-dasharray","5,4");
   });
 
   const locG=svg.append("g").attr("class","locs");
