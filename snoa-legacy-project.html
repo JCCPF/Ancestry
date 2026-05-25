@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The MIE Legacy Project · 375th Anniversary · JCCPF</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --sand: #F1EFEB;
+    --navy: #134D73;
+    --blue: #1D6699;
+    --blue-light: #e6f2f9;
+    --blue-pale: #f0f7fb;
+    --gold: #BA7517;
+    --gold-light: #FAEEDA;
+    --gold-warm: #EF9F27;
+    --text-dark: #1a2e3a;
+    --text-mid: #4a5f6e;
+    --text-light: #7a8f9e;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--sand);
+    color: var(--text-dark);
+  }
+
+  .w {
+    max-width: 860px;
+    margin: 0 auto;
+    border: 0.5px solid #d0cec9;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  /* NAV */
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 28px;
+    border-bottom: 0.5px solid #d0cec9;
+    background: #fff;
+  }
+  .nav-logo {
+    font-family: 'EB Garamond', serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    line-height: 1.3;
+    color: var(--navy);
+  }
+  .nav-logo span {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: var(--text-light);
+    text-transform: uppercase;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .nav-links a {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    text-decoration: none;
+  }
+  .nav-active {
+    color: var(--gold) !important;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 2px;
+  }
+  .nav-donate {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 7px 18px;
+    border: 0.5px solid var(--blue);
+    color: var(--blue);
+    border-radius: 2px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  /* HERO — deep navy instead of near-black */
+  .hero {
+    background: var(--navy);
+    padding: 72px 28px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.07;
+    background: repeating-linear-gradient(45deg, #BA7517 0, #BA7517 1px, transparent 1px, transparent 12px);
+  }
+  .hero-num {
+    font-family: 'EB Garamond', serif;
+    font-size: 120px;
+    font-weight: 500;
+    color: var(--gold);
+    line-height: 1;
+    opacity: 0.18;
+    position: absolute;
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-warm);
+    font-weight: 500;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .hero-h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: 52px;
+    font-weight: 500;
+    line-height: 1.1;
+    color: var(--sand);
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .hero-h1 em {
+    font-style: italic;
+    color: var(--gold-warm);
+  }
+  .hero-sub {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--blue-light);
+    font-weight: 300;
+    max-width: 540px;
+    margin: 0 auto 32px;
+    position: relative;
+  }
+  .hero-badge {
+    display: inline-block;
+    border: 0.5px solid var(--gold);
+    color: var(--gold-warm);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 8px 24px;
+    border-radius: 2px;
+    position: relative;
+  }
+
+  /* BANNER */
+  .jccpf-banner {
+    background: var(--blue);
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .jccpf-banner-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .jccpf-banner-text {
+    font-size: 13px;
+    color: var(--blue-light);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  .jccpf-banner-text strong {
+    font-weight: 500;
+    color: #fff;
+  }
+
+  /* OPENING */
+  .opening {
+    background: #fff;
+    padding: 52px 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .opening-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: #D3D1C7;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .opening-img-inner {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(160deg, #B4C8D8 0%, #6b8fa8 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .opening-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(19, 77, 115, 0.75);
+    padding: 8px 14px;
+    font-size: 10px;
+    color: var(--blue-light);
+    letter-spacing: 0.08em;
+  }
+  .sec-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  .sec-h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 34px;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  .prose {
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--text-mid);
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+  .prose-italic {
+    font-family: 'EB Garamond', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--navy);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  /* MORE BAND */
+  .more-band {
+    background: var(--gold-light);
+    padding: 40px 48px;
+    text-align: center;
+    border-top: 0.5px solid #FAC775;
+    border-bottom: 0.5px solid #FAC775;
+  }
+  .more-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .more-line {
+    font-family: 'EB Garamond', serif;
+    font-size: 26px;
+    font-style: italic;
+    color: #633806;
+    line-height: 1.3;
+  }
+  .more-line.accent {
+    color: var(--gold);
+    font-size: 30px;
+  }
+
+  /* LEGACY SECTION */
+  .legacy {
+    background: var(--sand);
+    padding: 52px 28px;
+  }
+  .legacy-intro {
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--text-mid);
+    font-weight: 300;
+    max-width: 580px;
+    margin-bottom: 32px;
+  }
+  .legacy-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .legacy-card {
+    background: #fff;
+    border: 0.5px solid #d0cec9;
+    border-radius: 4px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 14px;
+    align-items: start;
+  }
+  .legacy-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--gold-light);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .legacy-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .legacy-body {
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--text-light);
+    font-weight: 300;
+  }
+
+  /* WHY NOW — navy instead of near-black */
+  .why-now {
+    background: var(--navy);
+    padding: 52px 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .why-text .sec-eyebrow { color: var(--gold-warm); }
+  .why-text .sec-h2 { color: var(--sand); }
+  .why-text .prose { color: var(--blue-light); }
+  .why-statement {
+    font-family: 'EB Garamond', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: var(--sand);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    border-left: 2px solid var(--gold);
+    padding-left: 20px;
+  }
+  .why-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .why-card {
+    background: rgba(255,255,255,0.07);
+    border: 0.5px solid rgba(186,117,23,0.3);
+    border-radius: 4px;
+    padding: 18px 20px;
+  }
+  .why-card-title {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--gold-warm);
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .why-card-body {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--blue-light);
+    font-weight: 300;
+  }
+
+  /* LIVING LEGACY — mid blue */
+  .living-legacy {
+    background: var(--blue);
+    padding: 48px 28px;
+    text-align: center;
+  }
+  .living-legacy-label {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    font-weight: 500;
+    margin-bottom: 16px;
+    opacity: 0.8;
+  }
+  .living-legacy-text {
+    font-family: 'EB Garamond', serif;
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--sand);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .living-legacy-text em {
+    font-style: italic;
+    color: var(--gold-warm);
+  }
+  .living-legacy-sub {
+    font-size: 14px;
+    color: var(--blue-light);
+    font-weight: 300;
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* ROLE SECTION */
+  .role-section {
+    background: #fff;
+    padding: 52px 28px;
+  }
+  .role-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--blue);
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  .role-h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 34px;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  .role-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  .role-body {
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--text-mid);
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+  .role-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 4px;
+  }
+  .role-step {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+  .step-num {
+    font-family: 'EB Garamond', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--blue);
+    line-height: 1.2;
+  }
+  .step-text {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text-mid);
+    font-weight: 300;
+    padding-top: 2px;
+    border-left: 1px solid #c8d8e4;
+    padding-left: 12px;
+  }
+  .role-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .role-stat {
+    background: var(--sand);
+    border-radius: 4px;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .role-stat-label {
+    font-size: 12px;
+    color: var(--text-mid);
+  }
+  .role-stat-val {
+    font-family: 'EB Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--blue);
+  }
+  .role-cta {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .btn-gold {
+    background: var(--gold);
+    color: var(--gold-light);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: 2px;
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+    text-align: center;
+    cursor: pointer;
+  }
+  .btn-out {
+    border: 0.5px solid var(--blue);
+    color: var(--blue);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: 2px;
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  /* FOOTER — navy */
+  .foot {
+    background: var(--navy);
+    padding: 24px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .foot-logo {
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    color: var(--blue-light);
+  }
+  .foot-r {
+    font-size: 11px;
+    color: #85B7EB;
+    letter-spacing: 0.06em;
+  }
+</style>
+</head>
+<body>
+
+<div class="w">
+  <nav class="nav">
+    <div class="nav-logo">Jewish Caribbean Culture<span>Preservation Foundation</span></div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Grantees</a>
+      <a href="#">Our Roots</a>
+      <a href="#" class="nav-active">375th</a>
+      <div class="nav-donate">Donate</div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-num">375</div>
+    <div class="hero-eyebrow">Mikvé Israel-Emanuel · Curaçao · 1651–2026</div>
+    <h1 class="hero-h1">A Legacy <em>375 Years</em><br>in the Making</h1>
+    <p class="hero-sub">For 375 years, the Jewish community of Curaçao has stood as a beacon of resilience, faith, and continuity. Today, that future is in our hands.</p>
+    <div class="hero-badge">The MIE Legacy Project · 2026</div>
+  </section>
+
+  <div class="jccpf-banner">
+    <div class="jccpf-banner-icon">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="#e6f2f9" stroke-width="1.2"/><path d="M8 5v4M8 11v.5" stroke="#e6f2f9" stroke-width="1.2" stroke-linecap="round"/></svg>
+    </div>
+    <p class="jccpf-banner-text"><strong>A note from JCCPF:</strong> This page was created by the Jewish Caribbean Culture Preservation Foundation to rally support around the 375th anniversary of Jewish life in Curaçao. JCCPF is fundraising now so that meaningful grants can be made to Congregation Mikvé Israel-Emanuel in time for this milestone.</p>
+  </div>
+
+  <section class="opening">
+    <div class="opening-img">
+      <div class="opening-img-inner">
+        <svg width="80" height="100" viewBox="0 0 80 100" fill="none" style="opacity:0.25">
+          <rect x="4" y="44" width="72" height="52" fill="#134D73"/>
+          <polygon points="40,6 4,44 76,44" fill="#134D73"/>
+          <rect x="28" y="62" width="24" height="34" fill="#F1EFEB"/>
+          <rect x="8" y="52" width="18" height="22" fill="#F1EFEB"/>
+          <rect x="54" y="52" width="18" height="22" fill="#F1EFEB"/>
+          <circle cx="40" cy="28" r="6" fill="#F1EFEB"/>
+        </svg>
+      </div>
+      <div class="opening-caption">Mikvé Israel-Emanuel · The Snoa · Est. 1732 · Your photo here</div>
+    </div>
+    <div>
+      <div class="sec-eyebrow">375 years of continuity</div>
+      <h2 class="sec-h2">An unbroken story unlike any other in the Americas</h2>
+      <p class="prose">From the first Sephardic Jews who arrived seeking refuge and opportunity, to the vibrant, living community of today, Mikvé Israel-Emanuel has carried a story unlike any other in the Americas — a story rooted in courage, built on tradition, and sustained by generations who believed deeply in its future.</p>
+      <p class="prose-italic">"Today, that future is in our hands."</p>
+    </div>
+  </section>
+
+  <div class="more-band">
+    <div class="more-lines">
+      <div class="more-line">This is more than restoration.</div>
+      <div class="more-line">More than programming.</div>
+      <div class="more-line">More than a celebration.</div>
+      <div class="more-line accent">It is a commitment.</div>
+    </div>
+  </div>
+
+  <section class="legacy">
+    <div class="sec-eyebrow">The MIE Legacy Project</div>
+    <h2 class="sec-h2">A bold vision for the next 375 years</h2>
+    <p class="legacy-intro">JCCPF has identified five interconnected areas of need as the congregation approaches this milestone. Together, they form the Legacy Project — a framework for ensuring that 375 years of history do not become a memory, but remain a living, thriving presence for generations to come.</p>
+    <div class="legacy-grid">
+      <div class="legacy-card">
+        <div class="legacy-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="6" width="14" height="10" rx="1" stroke="#BA7517" stroke-width="1.2"/><polygon points="9,1 2,6 16,6" stroke="#BA7517" stroke-width="1.2" fill="none"/></svg>
+        </div>
+        <div>
+          <div class="legacy-title">Preserve the historic synagogue</div>
+          <p class="legacy-body">Protect and restore the communal buildings that have stood at the heart of Jewish life in Curaçao for nearly three centuries.</p>
+        </div>
+      </div>
+      <div class="legacy-card">
+        <div class="legacy-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="2" width="14" height="14" rx="1" stroke="#BA7517" stroke-width="1.2"/><path d="M6 9h6M9 6v6" stroke="#BA7517" stroke-width="1.2"/></svg>
+        </div>
+        <div>
+          <div class="legacy-title">Reimagine underutilized spaces</div>
+          <p class="legacy-body">Transform existing assets into sustainable, income-generating properties that fund the community's long-term future.</p>
+        </div>
+      </div>
+      <div class="legacy-card">
+        <div class="legacy-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="7" r="3.5" stroke="#BA7517" stroke-width="1.2"/><path d="M3 16c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#BA7517" stroke-width="1.2"/></svg>
+        </div>
+        <div>
+          <div class="legacy-title">Support cultural programming</div>
+          <p class="legacy-body">Fund educational, cultural, and community events tied to the 375th anniversary and beyond.</p>
+        </div>
+      </div>
+      <div class="legacy-card">
+        <div class="legacy-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="6.5" stroke="#BA7517" stroke-width="1.2"/><path d="M2.5 9h13M9 2.5a10 10 0 0 1 0 13M9 2.5a10 10 0 0 0 0 13" stroke="#BA7517" stroke-width="1.2"/></svg>
+        </div>
+        <div>
+          <div class="legacy-title">Strengthen global connections</div>
+          <p class="legacy-body">Build lasting bridges between Curaçao and the worldwide Jewish diaspora descended from this community.</p>
+        </div>
+      </div>
+      <div class="legacy-card" style="grid-column:1/-1;">
+        <div class="legacy-icon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2l1.8 5.4H17l-4.5 3.3 1.7 5.3L9 13l-5.2 3 1.7-5.3L1 7.4h6.2z" stroke="#BA7517" stroke-width="1.2" fill="none"/></svg>
+        </div>
+        <div>
+          <div class="legacy-title">Create pathways for future generations</div>
+          <p class="legacy-body">Build programming and leadership opportunities that give young people a reason to engage with, lead, and belong to this community for centuries to come.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-now">
+    <div class="why-text">
+      <div class="sec-eyebrow">Why now</div>
+      <h2 class="sec-h2">Moments like this come once in centuries.</h2>
+      <p class="why-statement">"This anniversary is not just a time to look back — it is a rare opportunity to build forward with intention, vision, and collective responsibility."</p>
+      <p class="prose">Without decisive investment today, the physical and communal infrastructure that has sustained Jewish life in Curaçao for centuries is at risk. With it, we can ensure something far more powerful.</p>
+    </div>
+    <div class="why-cards">
+      <div class="why-card">
+        <div class="why-card-title">The moment</div>
+        <div class="why-card-body">A 375th anniversary is a once-in-generations opportunity to galvanize global attention, community pride, and philanthropic support around a shared cause.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-card-title">The need</div>
+        <div class="why-card-body">Aging infrastructure, limited local resources, and the pressures of sustaining a small community in the modern world require coordinated, strategic investment now.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-card-title">The opportunity</div>
+        <div class="why-card-body">Descendants and supporters around the world are watching. This is the moment to show them what their connection to Curaçao can build.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="living-legacy">
+    <div class="living-legacy-label">The goal</div>
+    <div class="living-legacy-text">Not a memory.<br><em>A living legacy.</em></div>
+    <p class="living-legacy-sub">375 years of history deserve more than commemoration. They deserve a future as remarkable as the past.</p>
+  </section>
+
+  <section class="role-section">
+    <div class="role-eyebrow">How JCCPF is helping</div>
+    <h2 class="role-h2">We identified the need. Now we're raising the resources to meet it.</h2>
+    <div class="role-grid">
+      <div>
+        <p class="role-body">JCCPF created the Legacy Project framework to bring focus, urgency, and global visibility to the needs of Congregation Mikvé Israel-Emanuel as it approaches this extraordinary milestone. We are not waiting for the anniversary to act — we are fundraising now so that meaningful grants can be in place when they are needed most.</p>
+        <p class="role-body">We believe that donors around the world — descendants, supporters, and anyone moved by this story — deserve a clear, compelling way to contribute. The Legacy Project gives them that.</p>
+        <div class="role-steps">
+          <div class="role-step">
+            <div class="step-num">1</div>
+            <div class="step-text">JCCPF raises funds from donors worldwide who want to support this milestone</div>
+          </div>
+          <div class="role-step">
+            <div class="step-num">2</div>
+            <div class="step-text">Funds are granted directly to MIE and affiliated organizations for Legacy Project priorities</div>
+          </div>
+          <div class="role-step">
+            <div class="step-num">3</div>
+            <div class="step-text">The community enters its 375th year with the resources to celebrate, restore, and grow</div>
+          </div>
+        </div>
+        <div class="role-cta">
+          <div class="btn-gold">Support the Legacy Project</div>
+          <div class="btn-out">See our current grants →</div>
+        </div>
+      </div>
+      <div class="role-stats">
+        <div class="role-stat">
+          <div class="role-stat-label">Granted to MIE to date</div>
+          <div class="role-stat-val">$40,000</div>
+        </div>
+        <div class="role-stat">
+          <div class="role-stat-label">Years of history</div>
+          <div class="role-stat-val">375</div>
+        </div>
+        <div class="role-stat">
+          <div class="role-stat-label">Anniversary year</div>
+          <div class="role-stat-val">2026</div>
+        </div>
+        <div class="role-stat">
+          <div class="role-stat-label">Oldest congregation in the Americas</div>
+          <div class="role-stat-val">Est. 1651</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="foot-logo">Jewish Caribbean Culture Preservation Foundation · Est. 2024</div>
+    <div class="foot-r">info@jccpf.org · www.jccpf.org · EIN 99-1247962</div>
+  </footer>
+</div>
+
+</body>
+</html>
